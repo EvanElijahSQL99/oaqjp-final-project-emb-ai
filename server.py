@@ -4,6 +4,7 @@ from EmotionDetection.emotion_detection import emotion_detector
 
 app = Flask("Emotion Detector")
 
+
 @app.route("/emotionDetector")
 def emot_detector():
     """Analyze the supplied text and return a formatted emotion response."""
@@ -15,18 +16,19 @@ def emot_detector():
         return "Invalid text! Please try again!"
 
     return (
-        "For the given statement, the system response is "
-        "'anger': {}, 'disgust': {}, 'fear': {}, 'joy': {} and 'sadness': {}. "
-        "The dominant emotion is {}.".format(
-            response['anger'], response['disgust'], response['fear'],
-            response['joy'], response['sadness'], dominant_emotion
-        )
+        f"For the given statement, the system response is "
+        f"'anger': {response['anger']}, 'disgust': {response['disgust']}, "
+        f"'fear': {response['fear']}, 'joy': {response['joy']} and "
+        f"'sadness': {response['sadness']}. "
+        f"The dominant emotion is {dominant_emotion}."
     )
+
 
 @app.route("/")
 def render_index_page():
     """Render the main application page."""
     return render_template('index.html')
+
 
 if __name__ == "__main__":
     app.run(host="0.0.0.0", port=5000)

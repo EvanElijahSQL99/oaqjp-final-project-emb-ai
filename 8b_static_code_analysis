@@ -1,7 +1,4 @@
-************* Module server
-server.py:32:0: C0304: Final newline missing (missing-final-newline)
-server.py:18:8: C0209: Formatting a regular string which could be an f-string (consider-using-f-string)
 
------------------------------------
-Your code has been rated at 8.57/10
+------------------------------------
+Your code has been rated at 10.00/10
 
